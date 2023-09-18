@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part Three</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: #fff;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    /* 
+        1. createElement()
+        2. innerHTML
+        3. querySelector()
+        4. appendChild()
+        5. textContent
+        6. replacewith()
+        7. li:nth-child()
+        8. li:first-child
+        9. li:last-child
+        10. outerHTML => for edit whole tag
+        11. remove() => for removing element
+    */
+
+    // 1. Insert Value
+    // Insert value into the language ul list
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        const lang = document.querySelector('.language');
+        lang.appendChild(li)
+    }
+
+    addLanguage('TypeScript');
+    addLanguage('Python')
+
+
+    // Optimize and predfer way
+    function optiLang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li)
+    }
+
+    optiLang('Java')
+    optiLang('Nodejs')
+
+
+    // 2. Edit
+    // Edit one way
+    const secondLang = document.querySelector('li:nth-child(2)'); 
+    // console.log(secondLang) //Typescript
+    const newli = document.createElement('li');
+    newli.innerHTML = 'Mojo';
+    secondLang.replaceWith(newli);
+
+    // Edit other way
+    const firstLang = document.querySelector('li:first-child');
+    // console.log(firstLang)
+    firstLang.outerHTML = '<li>Spring</li>'
+
+    // 3. Remove
+    const javaLang = document.querySelector('li:nth-child(4)');
+    console.log(javaLang)
+    javaLang.remove();
+
+    
+</script>
+</html>

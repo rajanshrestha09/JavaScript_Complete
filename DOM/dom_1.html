@@ -16,10 +16,10 @@
 
 <body>
     <div class="parent">
-        <div class="day">Monday</div>
-        <div class="day">Tuesday</div>
-        <div class="day">Wednesday</div>
-        <div class="day">Thursday</div>
+        <div class="day" id="monday">Monday</div> 
+        <div class="day" id="tudesay">Tuesday</div>
+        <div class="day" id="wednesday">Wednesday</div>
+        <div class="day" id="thursday">Thursday</div> 
     </div>
 </body>
 
@@ -31,14 +31,16 @@
     //console.log(parent.children[1].innerHTML) // OUTPUT: Tuesday
     // console.log(parent.children.length) //OUTPUT: 4
 
-    // for(let i=0; i<parent.children.length; i++){
-    //     console.log(parent.children[i].innerHTML); // OUTPUT: Monday Tuesday Wednesday Thursday
-    // }
+    for(let i=0; i<parent.children.length; i++){
+        // This will print everything that is inside div
+        //  <div class="day" id="monday">Monday <span>Hello</span></div> OUTPUT: Monday <span>Hello</span>
+        // console.log(parent.children[i].innerHTML); // OUTPUT: Monday Tuesday Wednesday Thursday
+    }
 
     // parent.children[1].style.color = 'orange';// OUTPUT: Tuesday color orange
     // Parent to child traverse
     // console.log(parent.firstElementChild); //OUTPUT:  <div class="day">Monday</div>
-    // console.log(parent.lastElementChild); //OUTPUT:  <div class="day">Monday</div>
+    // console.log(parent.lastElementChild); //OUTPUT:  <div class="day">Thursday</div>
 
     const dayOne = document.querySelector('.day');
     // console.log(dayOne) // OUTPUT: Monday
